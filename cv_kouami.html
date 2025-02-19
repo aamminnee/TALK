@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Kouami Kpeglo</title>
+    <link rel="stylesheet" href="CSS/Acceuil.css">
+    <header>
+        <a href="Acceuil.html" class="logo">
+            <img src="images/logo.webp" alt="Logo TALK">
+        </a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="cart.html" >Panier</a></li>
+                <li><a href="connexion.html" class="active">Connexion</a></li>
+            </ul>
+        </nav>
+        <div class="humburger" onclick="toggleMenu()">
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+        </div>
+    </header>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1, h2, h3 {
+            color: #1e88e5;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .contact {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .projects ul li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .skills ul li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            width: 70%;
+            height: 12px;
+            background: #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            background: #1e88e5;
+            transition: width 1s ease-in-out;
+        }
+
+        .languages .skill-bar span[data-level="native"] {
+            width: 100%;
+        }
+
+        .languages .skill-bar span[data-level="intermediate"] {
+            width: 75%;
+        }
+
+        .languages .skill-bar span[data-level="basic"] {
+            width: 40%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .languages .skill-bar span {
+            background: linear-gradient(90deg, #1e88e5, #42a5f5);
+        }
+
+        .languages li {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Kouami Kpeglo</h1>
+            <div class="contact">
+                <p><strong>Téléphone :</strong> 06 30 14 73 35</p>
+                <p><strong>Email :</strong> <a href="mailto:jessekpeglo@gmail.com">jessekpeglo@gmail.com</a></p>
+                <p><strong>Adresse :</strong> 270 Rue des Pièces de Lugny 77550, Moissy-Cramayel</p>
+                <p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/kouami-kpeglo" target="_blank">Profil LinkedIn</a></p>
+                <p><strong>GitHub :</strong> <a href="https://github.com/kouamikpeglo" target="_blank">Profil GitHub</a></p>
+            </div>
+
+            <div class="section">
+                <h2>Formation</h2>
+                <ul>
+                    <li>1ère année BUT Informatique (2024-2025) - UPEC IUT De Sénart-Fontainebleau</li>
+                    <li>Baccalauréat technologique, mention assez bien - 2024</li>
+                    <li>Certification PIX - 2024</li>
+                    <li>Participation à la confection d’objets technologiques : conception, codage et documentation (Lycée de la Mare Carrée, 2023-2024)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Expériences</h2>
+                <ul>
+                    <li><strong>Participation à la réalisation d’un jeu codé en langage C</strong><br>
+                        Développement et collaboration sur un projet de jeu en C.
+                    </li>
+                    <li><strong>Configuration de systèmes d’exploitation</strong><br>
+                        Mise en place et gestion d’un Dual Boot Archlinux et Windows 7.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section projects">
+                <h2>Projets</h2>
+                <ul>
+                    <li>Participation à la réalisation d’un jeu codé en langage C</li>
+                    <li>Configuration d’un Dual Boot Archlinux et Windows 7</li>
+                    <li>Réalisation d’une base de données avec Star UML</li>
+                </ul>
+            </div>
+
+            <div class="section skills">
+                <h2>Compétences</h2>
+                <ul>
+                    <li><strong>Système d’exploitation :</strong> Dual Boot (Archlinux, Windows)</li>
+                    <li><strong>Développement web :</strong> HTML, CSS</li>
+                    <li><strong>Gestion de bases de données :</strong> Oracle, Star UML</li>
+                    <li><strong>Administration et réseaux :</strong> Scripting (Bash)</li>
+                </ul>
+            </div>
+
+            <div class="section languages">
+                <h2>Langues</h2>
+                <ul>
+                    <li>
+                        Français (langue maternelle)
+                        <div class="skill-bar"><span data-level="native"></span></div>
+                    </li>
+                    <li>
+                        Anglais (bon niveau)
+                        <div class="skill-bar"><span data-level="intermediate"></span></div>
+                    </li>
+                    <li>
+                        Espagnol (niveau moyen)
+                        <div class="skill-bar"><span data-level="basic"></span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-box">
+                    <h3>Découvrir TALK</h3>
+                    <ul>
+                        <li><a href="a_propos.html">À propos</a></li>
+                        <li><a href="createurs.html">Créateurs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-box">
+                    <h3>Aide</h3>
+                    <ul>
+                        <li><a href="Contact.html">Nous contacter</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-box">
+                    <h3>COMMUNAUTÉ</h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/talk_officiel">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

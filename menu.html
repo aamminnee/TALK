@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/Acceuil.css">
+</head>
+<body onload="initializeCart()">
+    <header>
+        <a href="Acceuil.html" class="logo">
+            <img src="images/logo.webp" alt="Logo TALK">
+        </a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="cart.html" >Panier</a></li>
+                <li><a href="connexion.html" class="active">Connexion</a></li>
+            </ul>
+        </nav>
+        <div class="humburger" onclick="toggleMenu()">
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+        </div>
+    </header>
+    <div class="container">
+        <h1 id="store-name">Menu</h1>
+        <div id="product-list" class="product-list">
+            <!-- Les produits seront affichés ici -->
+        </div>
+        <br>
+        <a href="cart.html" class="btn">Voir le panier</a>
+    </div>
+
+    <!-- Script principal -->
+    <script src="app.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const storeId = parseInt(params.get('id'));
+        const store = stores.find(s => s.id === storeId);
+
+        document.getElementById('store-name').innerText = `Produits - ${store.name}`;
+        const productList = document.getElementById('product-list');
+
+        store.products.forEach(product => {
+            const div = document.createElement('div');
+            div.className = 'product-item';
+            div.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <h4>${product.name}</h4>
+                <p>${product.price.toFixed(2)}€</p>
+                <button onclick="addToCart(${product.id}, '${product.name}', ${product.price})">Ajouter au panier</button>
+            `;
+            productList.appendChild(div);
+        });
+
+    </script>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <div class="footer-box">
+                        <h3>Découvrir TALK</h3>
+                        <ul>
+                            <li><a href="a_propos.html">À propos</a></li>
+                            <li><a href="createurs.html">Créateurs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-box">
+                        <h3>Aide</h3>
+                        <ul>
+                            <li><a href="Contact.html">Nous contacter</a></li>
+                            <li><a href="FAQ.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-box">
+                        <h3>COMMUNAUTÉ</h3>
+                        <ul>
+                            <li><a href="https://www.instagram.com/talk_officiel">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

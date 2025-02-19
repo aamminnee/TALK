@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/Acceuil.css">
+</head>
+<body onload="displayOrderSummary()">
+    <header>
+        <a href="Acceuil.html" class="logo">
+            <img src="images/logo.webp" alt="Logo TALK">
+        </a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="cart.html" >Panier</a></li>
+                <li><a href="connexion.html" class="active">Connexion</a></li>
+            </ul>
+        </nav>
+        <div class="humburger" onclick="toggleMenu()">
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Paiement</h1>
+        <div class="payment-container">
+            <!-- Récapitulatif de la commande -->
+            <div class="order-summary">
+                <h2>Récapitulatif de la commande</h2>
+                <div id="order-items"></div>
+                <p id="order-total" class="order-total">Total : 0€</p>
+            </div>
+
+            <!-- Formulaire de paiement -->
+            <div class="payment-form">
+                <h2>Informations de paiement</h2>
+                <form onsubmit="submitPayment(event)">
+                    <div class="form-group">
+                        <label for="card-number">Numéro de carte</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" >
+                    </div>
+                    <div class="form-group">
+                        <label for="card-name">Nom sur la carte</label>
+                        <input type="text" id="card-name" name="card-name" placeholder="John Doe" >
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry-date">Date d'expiration</label>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" pattern="[0-9]{2}/[0-9]{2}" >
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="password" id="cvv" name="cvv" placeholder="123" >
+                    </div>
+                    <button type="submit" class="btn">Valider le paiement</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        function displayOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderItems = document.getElementById('order-items');
+            const orderTotal = document.getElementById('order-total');
+            orderItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'order-item';
+                div.innerHTML = `
+                    <p>${item.name} - ${item.price.toFixed(2)}€</p>
+                `;
+                orderItems.appendChild(div);
+                total += item.price;
+            });
+
+            orderTotal.innerText = `Total : ${total.toFixed(2)}€`;
+        }
+
+        function submitPayment(event) {
+            event.preventDefault();
+            alert("Paiement validé ! Merci pour votre commande.");
+            localStorage.setItem('cart', JSON.stringify([])); // Vider le panier après le paiement
+            window.location.href = "Acceuil.html"; // Redirige vers l'accueil
+        }
+    </script>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <div class="footer-box">
+                        <h3>Découvrir TALK</h3>
+                        <ul>
+                            <li><a href="a_propos.html">À propos</a></li>
+                            <li><a href="createurs.html">Créateurs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-box">
+                        <h3>Aide</h3>
+                        <ul>
+                            <li><a href="Contact.html">Nous contacter</a></li>
+                            <li><a href="FAQ.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-box">
+                        <h3>COMMUNAUTÉ</h3>
+                        <ul>
+                            <li><a href="https://www.instagram.com/talk_officiel">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

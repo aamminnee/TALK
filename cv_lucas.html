@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Lucas Goncalves</title>
+    <link rel="stylesheet" href="CSS/Acceuil.css">
+    <header>
+        <a href="Acceuil.html" class="logo">
+            <img src="images/logo.webp" alt="Logo TALK">
+        </a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="cart.html" >Panier</a></li>
+                <li><a href="connexion.html" class="active">Connexion</a></li>
+            </ul>
+        </nav>
+        <div class="humburger" onclick="toggleMenu()">
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+        </div>
+    </header>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1, h2, h3 {
+            color: #1e88e5;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .contact {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .projects ul li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .skills ul li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            width: 70%;
+            height: 12px;
+            background: #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            background: #1e88e5;
+            transition: width 1s ease-in-out;
+        }
+
+        .languages .skill-bar span[data-level="native"] {
+            width: 100%;
+        }
+
+        .languages .skill-bar span[data-level="intermediate"] {
+            width: 70%;
+        }
+
+        .languages .skill-bar span[data-level="basic"] {
+            width: 50%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .languages .skill-bar span {
+            background: linear-gradient(90deg, #1e88e5, #42a5f5);
+        }
+
+        .languages li {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Lucas Goncalves Do Carmo</h1>
+            <div class="contact">
+                <p><strong>Téléphone :</strong> 06 20 81 32 64</p>
+                <p><strong>Email :</strong> <a href="mailto:lucas.docarmo45@hotmail.com">lucas.docarmo45@hotmail.com</a></p>
+                <p><strong>Adresse :</strong> 25 rue Vauvenargues, 75018 Paris</p>
+                <p><strong>Portfolio :</strong> <a href="https://grond.iut-fbleau.fr/goncalvl" target="_blank">grond.iut-fbleau.fr/goncalvl</a></p>
+            </div>
+
+            <div class="section">
+                <h2>Formations</h2>
+                <ul>
+                    <li>BUT Informatique (2024 - Présent)</li>
+                    <li>Baccalauréat STI2D (Systèmes d'information et numérique) (2023 - 2024)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Expériences</h2>
+                <ul>
+                    <li><strong>Dépannage informatique (2022 - Présent)</strong><br>
+                        Maintenance et configuration d'équipements informatiques pour les habitants de l'immeuble.<br>
+                        Assistance technique pour divers problèmes logiciels et matériels.
+                    </li>
+                    <li><strong>Stage d'observation - Énergie</strong> (Dalkia, Épinay-sous-Sénart) (2020)<br>
+                        Observation des activités liées à la gestion énergétique et à l'efficacité énergétique des bâtiments.
+                    </li>
+                    <li><strong>Stage d'observation - Informatique</strong> (Groupe SUCHEME, Puteaux) (2022)<br>
+                        Découverte des outils et technologies utilisés dans les services informatiques.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section projects">
+                <h2>Projets</h2>
+                <ul>
+                    <li><strong>Pot de fleur connecté</strong> (2022)<br>
+                        Création d’un système automatisé avec capteurs, contrôlé via une application mobile.
+                    </li>
+                    <li><strong>Application pour plage connectée</strong> (2023)<br>
+                        Application en temps réel pour informer les utilisateurs et gérer un robot nettoyeur via une interface administrateur.
+                    </li>
+                    <li><strong>Jeu en C</strong> (2024)<br>
+                        Développement d’un jeu de stratégie de type Blocus en langage C (norme C89), en collaboration avec un camarade.
+                    </li>
+                    <li><strong>Site e-commerce local</strong> (2024)<br>
+                        Conception d’un site e-commerce proposant livraison et click-and-collect pour les commerçants locaux.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section skills">
+                <h2>Compétences</h2>
+                <ul>
+                    <li><strong>Programmation :</strong> C (89), HTML/CSS, PHP, SQL</li>
+                    <li><strong>Web et systèmes connectés :</strong> Développement d’applications, intégration de capteurs et microcontrôleurs</li>
+                    <li><strong>Maintenance informatique :</strong> Dépannage technique, installation matérielle et logicielle</li>
+                    <li><strong>Gestion de projet :</strong> Collaboration sur des projets technologiques</li>
+                </ul>
+            </div>
+
+            <div class="section languages">
+                <h2>Langues</h2>
+                <ul>
+                    <li>
+                        Français (langue maternelle)
+                        <div class="skill-bar"><span data-level="native"></span></div>
+                    </li>
+                    <li>
+                        Portugais (intermédiaire)
+                        <div class="skill-bar"><span data-level="intermediate"></span></div>
+                    </li>
+                    <li>
+                        Anglais (niveau moyen)
+                        <div class="skill-bar"><span data-level="basic"></span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-box">
+                    <h3>Découvrir TALK</h3>
+                    <ul>
+                        <li><a href="a_propos.html">À propos</a></li>
+                        <li><a href="createurs.html">Créateurs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-box">
+                    <h3>Aide</h3>
+                    <ul>
+                        <li><a href="Contact.html">Nous contacter</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-box">
+                    <h3>COMMUNAUTÉ</h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/talk_officiel">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

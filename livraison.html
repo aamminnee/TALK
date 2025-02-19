@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraison avec Prédiction d'Adresse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/Acceuil.css">
+</head>
+<body>
+    <header>
+        <a href="Acceuil.html" class="logo">
+            <img src="images/logo.webp" alt="Logo TALK">
+        </a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="cart.html" >Panier</a></li>
+                <li><a href="connexion.html" class="active">Connexion</a></li>
+            </ul>
+        </nav>
+        <div class="humburger" onclick="toggleMenu()">
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+        </div>
+    </header>
+    <div class="center-container">
+        <div class="delivery-container">
+            <h1>Livraison</h1>
+            <div class="delivery-box">
+                <p>Choisissez l’adresse de livraison :</p>
+                <input id="address" placeholder="Entrez votre adresse" type="text" class="delivery-input" oninput="fetchSuggestions()">
+                <div id="suggestions" class="suggestions"></div>
+                <button class="delivery-button" onclick="window.location.href='paiement.html'">Passer au paiement</button>
+            </div>
+        </div>
+    </div>
+    <script>
+async function fetchSuggestions() {
+    const input = document.getElementById('address').value;
+    const suggestionsBox = document.getElementById('suggestions');
+    suggestionsBox.innerHTML = ''; // Efface les suggestions précédentes
+
+    if (input.length < 3) {
+        return;
+    }
+
+    try {
+        // Utilisation de l'API Adresse.data.gouv.fr
+        const response = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(input)}&limit=5`);
+        const data = await response.json();
+
+        data.features.forEach((item) => {
+            const suggestion = document.createElement('p');
+            suggestion.textContent = item.properties.label;
+            suggestion.onclick = () => {
+                document.getElementById('address').value = suggestion.textContent;
+                suggestionsBox.innerHTML = ''; // Efface les suggestions après sélection
+            };
+            suggestionsBox.appendChild(suggestion);
+        });
+    } catch (error) {
+        console.error("Erreur lors de la récupération des suggestions :", error);
+    }
+}
+
+    </script>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <div class="footer-box">
+                        <h3>Découvrir TALK</h3>
+                        <ul>
+                            <li><a href="a_propos.html">À propos</a></li>
+                            <li><a href="createurs.html">Créateurs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-box">
+                        <h3>Aide</h3>
+                        <ul>
+                            <li><a href="Contact.html">Nous contacter</a></li>
+                            <li><a href="FAQ.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-box">
+                        <h3>COMMUNAUTÉ</h3>
+                        <ul>
+                            <li><a href="https://www.instagram.com/talk_officiel">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

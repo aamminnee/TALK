@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Amine AISSYNE</title>
+    <link rel="stylesheet" href="CSS/Acceuil.css">
+    <header>
+        <a href="Acceuil.html" class="logo">
+            <img src="images/logo.webp" alt="Logo TALK">
+        </a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="cart.html" >Panier</a></li>
+                <li><a href="connexion.html" class="active">Connexion</a></li>
+            </ul>
+        </nav>
+        <div class="humburger" onclick="toggleMenu()">
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+        </div>
+    </header>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1, h2, h3 {
+            color: #1e88e5;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .contact {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .projects ul li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .skills ul li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            width: 70%;
+            height: 12px;
+            background: #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            background: #1e88e5;
+            transition: width 1s ease-in-out;
+        }
+
+        .languages .skill-bar span[data-level="native"] {
+            width: 100%;
+        }
+
+        .languages .skill-bar span[data-level="intermediate"] {
+            width: 70%;
+        }
+
+        .languages .skill-bar span[data-level="basic"] {
+            width: 50%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .languages .skill-bar span {
+            background: linear-gradient(90deg, #1e88e5, #42a5f5);
+        }
+
+        .languages li {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Amine AISSYNE</h1>
+            <div class="contact">
+                <p><strong>Téléphone :</strong> 07 77 05 42 34</p>
+                <p><strong>Email :</strong> <a href="amine.aissyne06@icloud.com">amine.aissyne06@icloud.com</a></p>
+                <p><strong>Adresse :</strong> Melun, 77000</p>
+                <p><strong>Portfolio :</strong> <a href="https://grond.iut-fbleau.fr/aissyne" target="_blank">grond.iut-fbleau.fr/aissyne</a></p>
+            </div>
+
+            <div class="section">
+                <h2>Formations</h2>
+                <ul>
+                    <li>BUT Informatique (2024 - Présent)</li>
+                    <li>Baccalauréat générale (mathématique et numérique science informatique)(2023 - 2024) [assez bien]</li>
+                    <li>Certification PIX (janvier 2024) </li>
+                    <li>Brevet des collèges (2020 - 2021) [bien]</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Expériences</h2>
+                <ul>
+                    <li><strong>Professeur en informatique</strong> (Meaux, Seine et Marne) (2023 - Présent)<br>
+                        Suivi pédagogique de lycéens dans le domaine de l'informatique.
+                        Aide au devoir, confection d'exerice et de projet python.
+                    </li>
+                    <li><strong>Responsable de services chez Domino's Pizzas (Meaux, Seine et Marne) (2023 - Présent)</strong><br>
+                        Gestion d'une équipe durant les moments stressants.<br>
+                        Gestion administrative (traçabilité, livraison, comptabilité, etc).
+                        Livraison de produits en scooter.
+                        Préparation de pizzas.
+                    </li>
+                    <li><strong>Animateur centre nautique</strong> (Jablines, Seine et Marne) (2022)<br>
+                        Maintenance des machines pour les parc d'attraction.
+                        Surveillance des enfants sur les parc d'attraction.
+                        Préparation et ventes de confiseries.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section projects">
+                <h2>Projets</h2>
+                <ul>
+                    <li><strong>Site e-commerce local</strong> (2025)<br>
+                        Conception d’un site e-commerce proposant livraison et click-and-collect pour les commerçants locaux.
+                    </li>
+                    <li><strong>Configuration d'un dual boot</strong> (2024)<br>
+                        Configuration d'un dual boot (arch-linux / windows 7) sur une VM distante.
+                    </li>
+                    <li><strong>Blocus</strong> (2024)<br>
+                        Développement d’un jeu de stratégie de type Blocus en langage C (norme C89), en collaboration avec un camarade.
+                    </li>
+                    <li><strong>Buckshot Roulette</strong> (2024)<br>
+                        Développement d’un jeu de stratégie et de hasard de type roulette russe en langage python, en collaboration avec des camarades.
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="section skills">
+                <h2>Compétences</h2>
+                <ul>
+                    <li><strong>Programmation :</strong> C89, HTML/CSS, SQL89, SQL92, python, Verse</li>
+                    <li><strong>Maintenance informatique :</strong> Dépannage technique, installation matérielle et logicielle</li>
+                    <li><strong>Gestion de projet :</strong> Collaboration sur des projets informatique et profesionelle</li>
+                    <li><strong>Gestion d'une équipe :</strong> Gestion d'une équipe dans le monde profesionelle</li>
+                    <li><strong>réseau:</strong> protocole : TCP/IP, HTTP, SSH, FTP</li>
+                </ul>
+            </div>
+
+            <div class="section languages">
+                <h2>Langues</h2>
+                <ul>
+                    <li>
+                        Français (langue maternelle)
+                        <div class="skill-bar"><span data-level="native"></span></div>
+                    </li>
+                    <li>
+                        Anglais (niveau scolaire)
+                        <div class="skill-bar"><span data-level="basic"></span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <div class="footer-box">
+                <h3>Découvrir TALK</h3>
+                <ul>
+                    <li><a href="a_propos.html">À propos</a></li>
+                    <li><a href="createurs.html">Créateurs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div class="footer-box">
+                <h3>Aide</h3>
+                <ul>
+                    <li><a href="Contact.html">Nous contacter</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div class="footer-box">
+                <h3>COMMUNAUTÉ</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/talk_officiel">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

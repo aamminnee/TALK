@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALK - Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/Acceuil.css">
+</head>
+
+<body>
+    <!-- Barre de navigation -->
+    <header>
+        <a href="Acceuil.html" class="logo">
+            <img src="images/logo.webp" alt="Logo TALK">
+        </a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="cart.html" >Panier</a></li>
+                <li><a href="connexion.html" class="active">Connexion</a></li>
+            </ul>
+        </nav>
+        <div class="humburger" onclick="toggleMenu()">
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+            <span class="ligne"></span>
+        </div>
+    </header>
+    <!-- Contenu principal -->
+    <div class="container">
+        <h1>Nos boutiques</h1>
+        <div id="store-list" class="store-list"></div>
+    </div>
+    
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-box">
+                    <h3>Découvrir TALK</h3>
+                    <ul>
+                        <li><a href="a_propos.html">À propos</a></li>
+                        <li><a href="createurs.html">Créateurs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-box">
+                    <h3>Aide</h3>
+                    <ul>
+                        <li><a href="Contact.html">Nous contacter</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-box">
+                    <h3>COMMUNAUTÉ</h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/talk_officiel">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="app.js"></script>
+    <script>
+        // Récupérer la liste des magasins et l'afficher
+        const storeList = document.getElementById('store-list');
+        stores.forEach(store => {
+            const div = document.createElement('div');
+            div.className = 'store-card';
+            div.innerHTML = `
+                <img src="${store.image}" alt="${store.name}" class="store-image">
+                <h3>${store.name}</h3>
+                <p>Catégorie : ${store.category}</p>
+                <a href="menu.html?id=${store.id}" class="btn">Voir les produits</a>
+            `;
+            storeList.appendChild(div);
+        });
+
+        // Fonction pour gérer la navigation mobile
+        function toggleNavbar() {
+            const navbarLinks = document.querySelector('.navbar-links');
+            navbarLinks.classList.toggle('active');
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
