@@ -26,7 +26,7 @@ Les transactions se font de manière sécurisée grâce à une intégration avec
 
 # Interface simple et intuitive :
 Le site est conçu pour offrir une expérience fluide et agréable à tous les utilisateurs, que ce soit pour les acheteurs ou les vendeurs.
-liens vers la charte graphique de TALK :  [Charte_TALK PDF](./charte_TALK.pdf)
+liens vers la charte graphique de TALK :  [Charte_TALK PDF](./Charte_TALK.pdf)
 
 # Remerciements
 Ce projet a été réalisé dans le cadre d'un projet d'étude au BUT Informatique, avec des camarades de l'IUT Sénart-Fontainebleau (UPEC). Merci à tous ceux qui ont participé à la conception et à la réalisation de ce projet.
