@@ -3,7 +3,7 @@
 
 TALK est une entreprise fictive qui propose une marketplace en ligne dédiée aux produits technologiques. Son objectif est de favoriser les échanges locaux en mettant en avant les commerçants du département de la Seine-et-Marne (77, France), tout en offrant une plateforme simple et efficace pour acheter et vendre des articles technologiques.
 
-#À propos du projet
+À propos du projet
 Ce projet a été réalisé dans le cadre de notre formation en BUT Informatique à l'IUT Sénart-Fontainebleau (UPEC). L'objectif était de concevoir une plateforme de commerce en ligne, de la conception à la réalisation, en passant par l'intégration de fonctionnalités et l'optimisation de l'expérience utilisateur.
 
 Nous avons travaillé à plusieurs sur ce projet :
@@ -26,6 +26,7 @@ Les transactions se font de manière sécurisée grâce à une intégration avec
 
 # Interface simple et intuitive :
 Le site est conçu pour offrir une expérience fluide et agréable à tous les utilisateurs, que ce soit pour les acheteurs ou les vendeurs.
+liens vers la charte graphique de TALK :  [Charte_TALK PDF](./charte_TALK.pdf)
 
 # Remerciements
 Ce projet a été réalisé dans le cadre d'un projet d'étude au BUT Informatique, avec des camarades de l'IUT Sénart-Fontainebleau (UPEC). Merci à tous ceux qui ont participé à la conception et à la réalisation de ce projet.
